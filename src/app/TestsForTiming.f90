@@ -21,7 +21,7 @@
 
     implicit none
 
-    type(timer_class) :: simpleTimer, paralelTimer
+    type(timer_class) :: simpleTimer, parallelTimer
     integer :: n = 1000
     integer, allocatable, dimension(:,:) :: a, b
 
@@ -30,5 +30,12 @@
     allocate(b(n,n))
 
     call simpleTimer%initialize()
+    call parallelTimer%initialize()
+
+    call simpleTimer%Tic()
+
+    a = a*b
+
+    call simpleTimer%Toc()
 
     end program TestsForTimming
