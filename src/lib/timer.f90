@@ -51,7 +51,7 @@
     procedure :: Tic                    !< starts timming cycle
     procedure :: Toc                    !< ends timming cycle and accumulates the total
     procedure :: print => printElapsed  !< prints elapsed time of this timmer
-    procedure :: printLast
+    procedure :: printLast              !< prints the elapsed time of the last ran cycle
     procedure :: printCurrent           !< prints time of last cycle
     end type timer_class
 
